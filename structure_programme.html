@@ -6,7 +6,7 @@
 -->
 <html>
   <head>
-    <title>Structure du programme</title>
+  <title>Structure du programme</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <meta name="description" content="" />
@@ -47,7 +47,7 @@
             </header>
             <p>Afin d’obtenir des individus capables de jouer à un jeu vidéo, nous avons utilisé un algorithme évolutif.Ce type d’algorithme s’inspire de la théorie de l'évolution des populations. </p>
 						<h3>Notion de séléction naturelle</h3>
-            <p>Selon la théorie de l’évolution, les individus les moins adaptés à leur milieu ne sont pas sélectionnés. A l’inverse, les individus particulièrement adaptés à leur milieu, c’est à dire ceux dont le génome a subit des mutations bénéfiques, ont plus de chance de se reproduire, et donc de transmettre leurs gènes. En transmettant à leur descendance ces “anomalies positives”, ils leur confèrent un avantage évolutif. L’exemple classique est celui des girafes. Elles ont sans doute acquis leur cou particulièrement long au cours de l’évolution : un long cou étant un facteur déterminant pour la survie en cas de ressources limitées.</p>
+            <p>Selon la théorie de l’évolution, les individus les moins adaptés à leur milieu ne sont pas sélectionnés. A l’inverse, les individus particulièrement adaptés à leur milieu, c’est à dire ceux dont le génome a subit des mutations bénéfiques, ont plus de chance de se reproduire, et donc de transmettre leurs gènes. En trasnsférant à leur descendance ces “anomalies positives”, ils leur confèrent un avantage évolutif. L’exemple classique est celui des girafes. L'acquisition de leur cou particulièrement long au cours de l’évolution illustre bien la théorie de Darwin. En effet, un long cou est un facteur déterminant pour la survie en cas de ressources limitées. A chaque période de sécheresse, les individus les plus petits étaient éliminés, alors que les plus grands survivaient et pouvaient se reproduire.</p>
             
             
             
@@ -57,19 +57,21 @@
             
             <hr />
             <h3>Adaptation de l'algorithme au problème</h3>
-            <p>Ces algorithmes sont souvent utilisé pour résoudre des problèmes d’optimisation. Dans notre cas, l’objectif est de générer des “individus-solutions”  adaptés à leur milieu, c’est à dire aptes à y survivre. En d’autres termes, nous cherchons à construire des individus capables surmonter les difficultés d’un jeu.</p>
+            <p>Ces algorithmes sont souvent utilisés pour résoudre des problèmes d’optimisation. Dans notre cas, l’objectif est de générer des “individus-solutions”  adaptés à leur milieu, c’est à dire aptes à y survivre. En d’autres termes, nous cherchons à construire des individus capables surmonter les difficultés d’un jeu.</p>
             <p>Nos individus vont ainsi évoluer dans des “niveaux”, qui peuvent être de difficultés différentes. C’est ces niveaux qui nous permettent d'entraîner nos individus, c’est à dire à en faire des intelligences artificielles.</p>
             <p>Comme dans tous les algorithmes évolutifs, nos individus  sont caractérisés par leur génotype (leur matrice décisionnelle). L’expression de ce génotype, c’est à dire leur phénotype, correspond à leur comportement face au jeu. La qualité de ce comportement est évalué, c’est ce que l’on appelle la fitness. Plus la fitness est élevée, plus l’individu est susceptible d’être sélectionné.</p>
             <hr />
             <h3> L'algorithme concrètement</h3>
             <p>Notre algorithme comporte plusieurs étapes:
-1-Génération d’une population initiale d’individus naïfs cette génération est aléatoire. En effet, avoir une grande diversité initiale permet d’augmenter la probabilité de trouver à terme un individu performant.
-2-Evaluation de ces individus (confrontation au jeu). Il s’agot ici de faire jouer nos individus, c’est à dire de leur faire parcourir le niveau (temps limité)
-3-Sélection du/des meilleur(s) individus. Nous avons fait le choix de choisir la distance parcourue par l’individu depuis le départ comme fitness. Ceux ayant été le plus loin dans le niveau sont donc sélectionés
-4-Reproduction du/des individus sélectionnés: 
-5-Mutation des descendants 
-Ces deux dernières étapes permettent de créer  une nouvelle génération n+1. Les individus de cette génération partagent une partie des caractéristiques de leur(s) ascendant(s), mais présentent également des mutations dans leur génome. Ces variations permettent d’explorer localement l’espace des solutions, dans l’objectif de converger à terme vers un minimum.</p>
- <p>On répète cette boucle jusqu’à atteindre un critère d’arrêt. Ce critère peut varier selon les algorithmes. Dans notre cas, la boucle s’arrête quand un individu à réussi à résoudre le problème posé, c’est à dire à terminer le niveau testé.</p>
+            <ul style= "list-style-type: square">
+              <li><B> Génération </B> d’une population initiale d’individus naïfs. Cette génération est aléatoire. En effet, avoir une grande diversité initiale permet d’augmenter la probabilité de trouver à terme un individu performant.</li>
+              <li><B>Evaluation</B> de ces individus (confrontation au jeu). Il s’agit ici de faire jouer nos individus, c’est à dire de leur faire parcourir le niveau en un temps limité.</li>
+              <li><B>Sélection</B> du/des meilleur(s) individus. Nous avons fait le choix de choisir la distance parcourue par l’individu depuis le départ comme fitness. Celui (ceux) ayant été le plus loin dans le niveau est(sont) donc sélectioné(s)</li>     
+              <li><B>Reproduction</B> du/des individu(s) sélectionné(s)</li>    
+              <li><B>Mutation</B> des descendants générés à l'étape précédente</li>        
+</ul>
+Ces deux dernières étapes permettent de créer  une nouvelle génération <I>n+1</I>. Les individus de cette génération partagent une partie des caractéristiques de leur(s) ascendant(s), mais présentent également des mutations dans leur génome. Ces variations permettent d’explorer localement l’espace des solutions, dans l’objectif de converger à terme vers un minimum.</p>
+ <p>On répète cette boucle jusqu’à atteindre un critère d’arrêt. Ce critère peut varier selon les algorithmes. Dans notre cas, la boucle s’arrête soit quand un individu à réussi à résoudre le problème posé, c’est à dire à terminer le niveau testé, soit quand le temps maximum autorisé est atteint. Ce critère d'arrêt secondaire est nécessaire pour éviter une boucle infinie en cas de niveau non solvable.</p>
 
             
             <header>

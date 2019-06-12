@@ -49,20 +49,19 @@
             <h2>Les aléas de la programmation</h2>            
             <hr/>
             <h3>Détermination de la forme du génome</h3>
-            <p>En premier lieu, nous avons pensé à faire une matrice pour génome de nos individus. Nous sommes partis longtemps sur cette lancée avant de nous rendre compte qu'une matrice est plus limitée en terme de modularité, et est plus difficile à améliorer. Notre choix s'est alors porté sur un système de graphes. Dans ce foncionnement, l'input correspond à des informations de l'environnement autour de l'individu, et en fonctionnant des connections mises en place, différentes réactions sont envisagées.</p>
+            <p>En premier lieu, nous avons pensé à faire une matrice pour génome de nos individus. Nous sommes partis longtemps sur cette lancée avant de nous rendre compte qu'une matrice est plus limitée en terme de modularité, et est plus difficile à améliorer. Notre choix s'est alors porté sur un système de graphes. Dans ce fonctionnement, l'input correspond à des informations sur l'environnement autour de l'individu, et en fonction des connexions mises en place, l'output donne les différentes réactions sont envisagées.</p>
             </header>
             <h3>Interface graphique</h3>
-            <p>Tout à d'abord, il a fallu décider de l'organisation du programme de la fenêtre graphique. Finalement, la décision a été prise de la faire fonctionner entre une classe dédier, ViewWorld, et la classe Game. Il a été compliqué de répartir les attributs de manière à faire interagir les deux classes.</p>
+            <p>Tout d'abord, il a fallu décider de l'organisation du programme de la fenêtre graphique. Finalement, la décision a été prise de la faire fonctionner entre une classe dédiée, ViewWorld, et la classe Game. Il a été compliqué de répartir les attributs de manière à faire interagir les deux classes.</p>
             Ensuite, il y a souvent eu des problèmes de placement des différents éléments dans la fenêtre créée. Ces problèmes ont été résolus en combinant des réponses de différents sites web pour en trouver une adaptée. 
-            Enfin, le plus long fut de faire fonctionner le bouton faisant avancer les individus. Il a pour cela été nécessaire de réorganiser en grande partie le fonctionnement de la fenêtre pour pouvoir utliser des méthodes des deux classes. Nous avons également essayé de créer un bouton faisant plusieurs itérations, mais l'individu n'était affiché qu'après la dernière itération. Malgré plusieurs essais pour trouver d'où provenait l'erreur, nous supposons que le problème était lié au timer utilisé, et nous n'avons toujours pas trouvé comment le résoudre.
+            Enfin, le plus long fut de faire fonctionner le bouton faisant avancer les individus. Il a pour cela été nécessaire de réorganiser en grande partie le code de la fenêtre, pour pouvoir utliser des méthodes des deux classes. Nous avons également essayé de créer un bouton effectuant plusieurs itérations, mais l'individu n'était affiché qu'après la dernière itération. Malgré plusieurs essais pour trouver d'où provenait l'erreur, nous supposons que le problème était lié au timer utilisé, et nous n'avons toujours pas trouvé comment le résoudre.
             </p>
-
             <hr/>
             <h3>Sélection naturelle et évolution</h3>
-            <p>Les différents phénotypes sont soumis à des pressions de sélection. En effet les individus les moins adaptés à un environnement périssent et ne peuvent transmettre leurs gènes (fitness diminuée). Au contraire les individus à grande fitness transmettent leur génotype aux générations futures. </p>
+            <p>Les différents phénotypes sont soumis à des pressions de sélection. En effet les individus les moins adaptés à un environnement périssent et ne peuvent transmettre leurs gènes (fitness diminuée). Au contraire, les individus à grande fitness transmettent leur génotype aux générations futures. </p>
             <hr/>
             <h3>Évolution dirigée</h3>
-            <p>L'évolution dirgée est une méthode de génie biologique permettant l'évolution du génome vers un objectif défini par l'expérimentateur. Un gène subit des cycles de mutations-sélections. Dans notre programme, notre but est d'obtenir un individu capable de résoudre un parcours. Ainsi notre critère de sélectionn est la valeur de la fitness de l'agent. Au  fil des générations, ils deviennent de plus en plus adaptés à un parcours donné. </p>
+            <p>L'évolution dirigée est une méthode de génie biologique permettant l'évolution du génome vers un objectif défini par l'expérimentateur. Un gène subit des cycles de mutations-sélections. Dans notre programme, notre but est d'obtenir un individu capable de résoudre un parcours. Ainsi notre critère de sélection est la valeur de la fitness de l'agent. Au  fil des générations, ils deviennent de plus en plus adaptés à un parcours donné. </p>
           </div>
         </div>
       </section>

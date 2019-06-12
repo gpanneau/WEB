@@ -24,17 +24,17 @@
       </header>
 
     <!-- Nav -->
-      <nav id="menu">
-        <ul class="links">
-          <li><a href="index.html">Page d'accueil</a></li>
-          <li><a href="structure_programme.html">Structure du programme</a></li>
-          <li><a href="observations.html">Observations et analyse</a></li>
-          <li><a href="parallele_biologique.html">Parallèle biologique</a></li>
-          <li><a href="problemes.html">Problèmes rencontrés</a></li>
-          <li><a href="plus_loin.html">Pour aller plus loin</a></li>
-          <li><a href="bibliographie.html">Bibliographie</a></li>
-        </ul>
-      </nav>
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="index.html">Page d'accueil</a></li>
+					<li><a href="structure_programme1.html">Algorithme génétique</a></li>
+					<li><a href="structure_programme2.html">Implémentation</a></li>
+					<li><a href="exp_res.html">Expérimentations & Résultats</a></li>
+                    <li><a href="problemes.html">Problèmes rencontrés</a></li>
+                    <li><a href="plus_loin.html">Pour aller plus loin</a></li>
+                    <li><a href="bibliographie.html">Bibliographie</a></li>
+				</ul>
+			</nav>
 
     <!-- Heading -->
       <div id="heading" >
@@ -46,7 +46,7 @@
         <div class="inner">
           <div class="content">
             <header>
-              <h2>Notions fondammentales</h2>
+              <h2>Notions fondamentales</h2>
             </header>
             <h3>Fitness</h3>
             <p> La fitness d'un individu représente sa capacité à se reproduire.
@@ -55,13 +55,13 @@ Dans notre cas, la fitness est définie comme étant la distance parcourue par l
             </p>
             <hr/>
             <h3>Mutation et variabilité génétique</h3>
-            <p> Les mutations du génome apparaissent aléatoirement dans le génome d'un être vivant. Les mutations affectant les cellules germinales peuvent être transmises à la descendance. C'est une source importante de variabilité génotypique et phénotypique. </p>
+            <p> Les mutations du génome apparaissent aléatoirement dans le génome d'un être vivant. Les mutations affectant les cellules germinales peuvent être transmises à la descendance. C'est une source importante de variabilité génotypique et phénotypique, que nous sommes parvenus à implémenter pour le génome de nos individus. Ainsi, au moment de la création d'une nouvelle génération à partir d'un individu "parent", le génome de celui-ci est muté pour parvenir à de nouveaux génomes sensiblement différents.</p>
             <hr/>
             <h3>Sélection naturelle et évolution</h3>
-            <p>Les différents phénotypes sont soumis à des pressions de sélection. En effet les individus les moins adaptés à un environnement périssent et ne peuvent transmettre leurs gènes (fitness diminuée). Au contraire les individus à grande fitness transmettent leur génotype aux générations futures. </p>
+            <p>Les différents phénotypes sont soumis à des pressions de sélection. En effet, les individus les moins adaptés à leur environnement périssent et ne peuvent transmettre leurs gènes (fitness diminuée). Au contraire, les individus à fitness élevée transmettent leur génotype aux générations futures. Dans le cas de notre programme, les individus qui ne sont pas adaptés à l'environnement dans lequel ils sont testés sont éliminés, et seuls ceux avec la meilleure fitness voient leur génome conservé.</p>
             <hr/>
             <h3>Évolution dirigée</h3>
-            <p>L'évolution dirgée est une méthode de génie biologique permettant l'évolution du génome vers un objectif défini par l'expérimentateur. Un gène subit des cycles de mutations-sélections. Dans notre programme, notre but est d'obtenir un individu capable de résoudre un parcours. Ainsi notre critère de sélectionn est la valeur de la fitness de l'agent. Au  fil des générations, ils deviennent de plus en plus adaptés à un parcours donné. </p>
+            <p>L'évolution dirigée est une méthode de génie biologique permettant l'évolution du génome vers un objectif défini par l'expérimentateur. Un gène subit des cycles de mutations-sélections. Dans notre programme, notre but est d'obtenir un individu capable de résoudre un parcours. Ainsi, notre critère de sélection est la valeur de la fitness nos agents. Au  fil des générations, ils deviennent de plus en plus adaptés à un parcours donné. Ils sont alors testés sur un autre parcours, et ainsi de suite quand ils le réussissent. Cependant, sans pression de sélection, leur temps d'adaptation aux différents parcours reste à peu près constant.</p>
           </div>
         </div>
       </section>

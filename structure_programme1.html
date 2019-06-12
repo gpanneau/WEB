@@ -53,7 +53,12 @@
 
             <p>Selon la théorie de l’évolution, les individus les moins adaptés à leur milieu ne sont pas sélectionnés. A l’inverse, les individus particulièrement adaptés à leur milieu, c’est à dire ceux dont le génome a subi des mutations bénéfiques, ont plus de chance de se reproduire, et donc de transmettre leurs gènes. En trasnsférant à leur descendance ces “anomalies positives”, ils leur confèrent un avantage évolutif. L’exemple classique est celui des girafes. L'acquisition de leur cou particulièrement long au cours de l’évolution illustre bien la théorie de Darwin. En effet, un long cou est un facteur déterminant pour la survie en cas de ressources limitées. A chaque période de sécheresse, les individus les plus petits étaient éliminés, alors que les plus grands survivaient et pouvaient se reproduire.</p>
 
-            <div class="image"><img src="images/girafe.png"/></div>
+            <div class="image">
+            <figure>
+            <img src="images/girafe.png"/>
+            <figcaption> Sélection naturelle: les individus les moins adaptés sont éliminés </figcaption>
+             </figure>
+            </div>
 
             <hr />
             <h3>Adaptation de l'algorithme au problème</h3>
@@ -69,7 +74,8 @@
               <li><B>Sélection</B> du/des meilleur(s) individu(s). Nous avons fait le choix de prendre pour fitness la distance parcourue par l’individu depuis son départ. Celui (ceux) ayant été le plus loin dans le niveau est(sont) donc sélectionné(s)</li>     
               <li><B>Reproduction</B> du/des individu(s) sélectionné(s)</li>    
               <li><B>Mutation</B> des descendants générés à l'étape précédente</li>        
-</ul>
+</ul></p>
+<p>
 Ces deux dernières étapes permettent de créer  une nouvelle génération <I>n+1</I>. Les individus de cette génération partagent une partie des caractéristiques de leur(s) ascendant(s), mais présentent également des mutations dans leur génome. Ces variations permettent d’explorer localement l’espace des solutions, dans l’objectif de converger à terme vers un minimum.</p>
  <p>On répète cette boucle jusqu’à atteindre un critère d’arrêt, qui peut varier selon les algorithmes. Dans notre cas, la boucle s’arrête soit quand un individu a réussi à résoudre le problème posé, donc à terminer le niveau testé, soit quand le temps maximum autorisé est atteint. Ce critère d'arrêt secondaire est nécessaire pour éviter une boucle infinie en cas de niveau non solvable.</p> 
           </div>

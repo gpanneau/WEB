@@ -27,7 +27,7 @@
 			<nav id="menu">
 				<ul class="links">
 					<li><a href="index.html">Page d'accueil</a></li>
-					<li><a href="structure_programme1.html">Algorithme génétique</a></li>
+					<li><a href="structure_programme1.html">Algorithme évolutif</a></li>
 					<li><a href="structure_programme2.html">Implémentation</a></li>
 					<li><a href="exp_res.html">Expérimentations & Résultats</a></li>
                     <li><a href="problemes.html">Problèmes rencontrés</a></li>
@@ -46,39 +46,74 @@
         <div class="inner">
           <div class="content">
             <header>
-              <h2>Algorithme évolutif </h2>
-            </header>
-            <p>Afin d’obtenir des individus capables de jouer à un jeu vidéo, nous avons utilisé un algorithme évolutif. Ce type d’algorithme s’inspire de la théorie de l'évolution des populations. </p>
-						<h3>Notion de séléction naturelle</h3>
-
-            <p>Selon la théorie de l’évolution, les individus les moins adaptés à leur milieu ne sont pas sélectionnés. A l’inverse, les individus particulièrement adaptés à leur milieu, c’est à dire ceux dont le génome a subi des mutations bénéfiques, ont plus de chance de se reproduire, et donc de transmettre leurs gènes. En trasnsférant à leur descendance ces “anomalies positives”, ils leur confèrent un avantage évolutif. L’exemple classique est celui des girafes. L'acquisition de leur cou particulièrement long au cours de l’évolution illustre bien la théorie de Darwin. En effet, un long cou est un facteur déterminant pour la survie en cas de ressources limitées. A chaque période de sécheresse, les individus les plus petits étaient éliminés, alors que les plus grands survivaient et pouvaient se reproduire.</p>
-
-            <div class="image"><img src="images/girafe.png"/></div>
-
-            <hr />
-            <h3>Adaptation de l'algorithme au problème</h3>
-            <p>Ces algorithmes sont souvent utilisés pour résoudre des problèmes d’optimisation. Dans notre cas, l’objectif est de générer des “individus-solutions”  adaptés à leur milieu, c’est à dire aptes à y survivre. En d’autres termes, nous cherchons à construire des individus capables de surmonter les difficultés d’un jeu.</p>
-            <p>Nos individus vont ainsi évoluer dans des “niveaux”, qui peuvent être de difficulté différente. Ce sont ces niveaux qui nous permettent d'entraîner nos individus, c’est à dire d'en faire des intelligences artificielles.</p>
-            <p>Comme dans tous les algorithmes évolutifs, nos individus  sont caractérisés par leur génotype (leur matrice décisionnelle). L’expression de ce génotype, c’est à dire leur phénotype, correspond à leur comportement face au jeu. La qualité de ce comportement est évaluée, c’est ce que l’on appelle la fitness. Plus la fitness est élevée, plus l’individu est susceptible d’être sélectionné.</p>
-            <hr />
-            <h3> L'algorithme concrètement</h3>
-            <p>Notre algorithme comporte plusieurs étapes:
-            <ul style= "list-style-type: square">
-              <li><B> Génération </B> d’une population initiale d’individus naïfs. Cette génération est aléatoire. En effet, avoir une grande diversité initiale permet d’augmenter la probabilité de trouver à terme un individu performant.</li>
-              <li><B>Evaluation</B> de ces individus (confrontation au jeu). Il s’agit ici de faire jouer nos individus, c’est à dire de leur faire parcourir le niveau en un temps limité.</li>
-              <li><B>Sélection</B> du/des meilleur(s) individu(s). Nous avons fait le choix de prendre pour fitness la distance parcourue par l’individu depuis son départ. Celui (ceux) ayant été le plus loin dans le niveau est(sont) donc sélectionné(s)</li>     
-              <li><B>Reproduction</B> du/des individu(s) sélectionné(s)</li>    
-              <li><B>Mutation</B> des descendants générés à l'étape précédente</li>        
-</ul>
-Ces deux dernières étapes permettent de créer  une nouvelle génération <I>n+1</I>. Les individus de cette génération partagent une partie des caractéristiques de leur(s) ascendant(s), mais présentent également des mutations dans leur génome. Ces variations permettent d’explorer localement l’espace des solutions, dans l’objectif de converger à terme vers un minimum.</p>
- <p>On répète cette boucle jusqu’à atteindre un critère d’arrêt, qui peut varier selon les algorithmes. Dans notre cas, la boucle s’arrête soit quand un individu a réussi à résoudre le problème posé, donc à terminer le niveau testé, soit quand le temps maximum autorisé est atteint. Ce critère d'arrêt secondaire est nécessaire pour éviter une boucle infinie en cas de niveau non solvable.</p>
-
-            
-            <header>
             	<h2>Choix d'implémentation </h2>
             </header>
             <p>Les principales exigences de ce projet en matière de programmation étaient au nombre de trois. Premièrement, pouvoir créer, en l’état actuel de nos connaissances, une structure POO (environnement, individu, génome) assez riche pour permettre la construction de l’algorithme évolutif. Deuxièmement, avoir un code performant, qui puisse réaliser dans un temps court les nombreux calculs nécessaires à la génération, l’évaluation et la sélection des individus. Enfin, pouvoir programmer une interface graphique, pour visualiser l’évolution de nos individus et s’assurer qu’ils jouent correctement.</p>
 <p>Nous avons donc choisi de coder en python. Bien que ce langage soit beaucoup moins optimisé que d’autres, ses bibliothèques en font un compromis intéressant. Ainsi <I>numpy</I> permet de réaliser les calculs rapidement, tandis que <I>tkinter</I> est un module offrant la possibilité de générer des fenêtres graphiques. De plus, nous voulions éviter de nous engager dans des impasses. Python est là aussi idéal car il permet d'implémenter des prototypes rapidement. Cela nous a donné la possibilité de mettre nos idées à l'épreuves. </p>
+</p><hr/>
+<h3>Objectif</h3>
+
+<p>Générer des individus capable d’apprendre à jouer à un jeu de plateforme de type platformer, via des algorithmes bio-inspirés. 
+
+L’objectif de ce projet est de produire un code efficace, supportant de nombreux tests.
+
+Modualaire tant dans les métodes d’évolution que de sélection
+
+Optimiser les paramèrtres d’entraiemenrt
+Tester différentes alalogies biologiques
+Optimiser:
+    -les individus pour que les solutions propsées soient les plus effic    ces possibles
+    -donc optimiser les méthodes de selection t mutaions (mininum gloabal des paramètres d’optimisation)
+
+Un algorithme évolutif/Notion de sélection naturelle
+
+Diffuuon des mutations
+
+1/bases théorqiues
+ Afin d’obtenir des individus capable de jouer à un jeu vidéo, nous avons utilisé un algorithme évolutif.Ce type d’algorithme s’inspire de la théorie de l'évolution des populations. Selon la théorie de l’évolution, les individus les moins adaptés à leur milieu ne sont pas sélectionnés. A l’inverse, les individus particulièrement adaptés à leur milieu, c’est à dire ceux dont le génome a subit des mutations bénéfiques, ont plus de chance de se reproduire et donc de transmettre leurs gènes. En transmettant à leur descendance ces “anomalies positives”, ils leur confèrent un avantage évolutif, L’exemple classique est celui des girafes. Elles ont sans doute acquis leur cou particulièrement long au cours de l’évolution : un long cou étant un facteur déterminant pour la survie en cas de ressources limités.
+
+Ces algorithmes sont souvent utilisés pour résoudre des problèmes d’optimisation. Dans notre cas, l’objectif est de générer des “individus-solutions”  adaptés à leur milieu, c’est à dire aptes à y survivre. En d’autres termes, nous cherchons à construire des individus capables surmonter les difficultés d’un jeu.
+Nos individus vont ainsi évoluer dans des “niveaux”, qui peuvent être de difficultés différentes. C’est ces niveaux qui nous permettent d'entraîner nos individus, c’est à dire à en faire des intelligences artificielles.
+
+2/
+Comme dans tous les algorithmes évolutifs, nos individus  sont caractérisés par leur génotype (leur matrice décisionnelle). L’expression de ce génotype, c’est à dire leur phénotype, correspond à leur comportement face au jeu. La qualité de ce comportement est évalué, c’est ce que l’on appelle la fitness. Plus la fitness est élevée, plus l’individu est susceptible d’être sélectionné.
+
+
+Notre algorithme comporte plusieurs étapes:
+Génération d’une population initiale d’individus naïfs cette génération est aléatoire. En effet, avoir une grande diversité initiale permet d’augmenter la probabilité de trouver à terme un individu performant.
+Evaluation de ces individus (confrontation au jeu). Il s’agot ici de faire jouer nos individus, c’est à dire de leur faire parcourir le niveau (temps limité)
+Sélection du/des meilleur(s) individus. Nous avons fait le choix de choisir la distance parcourue par l’individu depuis le départ comme fitness. Ceux ayant été le plus loin dans le niveau sont donc sélectionés
+Reproduction du/des individus sélectionnés: 
+Mutation des descendants 
+Ces deux dernières étapes permettent de créer  une nouvelle génération n+1. Les individus de cette génération partagent une partie des caractéristiques de leur(s) ascendant(s), mais présentent également des mutations dans leur génome. Ces variations permettent d’explorer localement l’espace des solutions, dans l’objectif de converger à terme vers un minimum.
+On répète cette boucle jusqu’à atteindre un critère d’arrêt. Ce critère peut varier selon les algorithmes. Dans notre cas, la boucle s’arrête quand un individu à réussi à résoudre le problème posé, c’est à dire à terminer le niveau testé.
+
+Particularités du code:
+
+Les principales exigences de ce projet en termes de programmation étaient au nombre de trois. Premièrement, pouvoir créer, en l’état actuel de nos connaissances, une structure POO (environnement, individu, génome) assez riche pour permettre la construction de l’algorithme évolutif. Deuxièmement, avoir un code performant, qui puisse réaliser dans un temps court les nombreux calculs nécessaires à la génération, l’évaluation et la sélection des individus. En effet, nous savions que nous allions devoir générer de grandes quantités de tests. Enfin, pouvoir programmer une interface graphique, pour visualiser  l’évolution de nos individus et s’assurer qu’ils jouent correctement.
+Nous avons donc choisi de coder en python. Bien qu’il soit beaucoup moins optimisé que d’autres langages, ses bibliothèques en font un compromis intéressant. Ainsi numpy permet de réaliser les calculs rapidemententtandis que tkinter est un module qui offre la possibilité de génrer des feêtres graphiques.  
+Les caractéristiques d'un organisme sont en grande partie codées dans ses gènes,
+chaque population d'organismes est composée d'individus tous différents,
+les individus sont plus ou moins adaptés à leur environnement,
+les organismes transmettent une partie de leurs caractéristiques à leurs descendants,
+les individus les plus adaptés se reproduisent plus « efficacement », leurs caractéristiques ont donc tendance à davantage se répandre dans la population.
+
+Bases théoriques:
+Matrice de décision
+Graphe
+Vecteur de vision
+
+Structure du programme
+Fonctionnement de l'algorithme
+
+
+Graphe 
+Nos individus, pour être capables de jouer, ont besoin d’une intelligence, au sens large du terme. En effet, ils doivent être en mesure de réagir aux différentes situations dans lesquelles ils se trouvent. C’est cette aptitude à agir selon le contexte que nous appelons intelligence, et c’est cette intelligence que nous cherchons à développer et complexifier.
+Nos individus ont une liste préétablie d’actions possibles. Ils ont également une vision de leur environnement immédiat (input). Nous voulons que leur réaction à cet environnement immédiat (output) soit la plus adaptée possible. La qualité de cette réaction correspond à la pertinence de l’action choisie par l’individu par rapport à la situation. 
+Cependant, il y a plusieurs manières d’implémenter cette intelligence. Nous avons choisi une structure de type graphe. 
+
+Concrètement, nous avons dotés nos individus d’un certain nombre de gènes. Ce nombre peut varier au cours de l’évolution, via des mutations. Ces gènes sont reliés entre eux et sont des intermédiaires entre l’input et l’output. Un gène peut activer ou inhiber le gène (ou l’action) auquel il est relié.
+L'ensemble des gènes forme ainsi un réseau complexe, qui permet de complexifier et de réguler la réaction de l’individu. En effet, sans gènes, les inputs seraient directement reliés aux output: ajouter des intermédiaires permet d’affiner considérablement la réaction.
 </p>
           </div>
         </div>

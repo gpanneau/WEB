@@ -1794,6 +1794,8 @@ ul.icons {
       padding: 2rem 0 0.1rem 0 ; } }
   .wrapper .inner .content p {
     text-align: justify;}
+  .wrapper .inner .content ul {
+    text-align: justify;}
   .wrapper .inner .content {
     text-align: center;}
   .wrapper .inner .content .image img {

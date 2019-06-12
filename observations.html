@@ -50,103 +50,98 @@
             </header>
             <h3>Objectif initial</h3>
             <p>Avoir un individu capable de parcourir un jeu de plateforme.
-Jusqu’à maintenant, nous n’avons réussi qu’à travailler sur des plateformes simples, sans objet et sans
-ennemi. La difficulté réside ici dans le fait de trouver un chemin jusqu’a l’extrémité du terrain de jeu en ne bénéficiant que d’une vision limitée. Dans notre travail de résolution, nous avons abordé le problème sous deux angle différents :</p>
+Jusqu’à maintenant, nous n’avons réussi qu’à travailler sur des plateformes simples, sans objet ni
+ennemi. La difficulté réside ici dans le fait de trouver un chemin jusqu’à l’extrémité du terrain de jeu en ne bénéficiant que d’une vision limitée. Dans notre travail de résolution, nous avons abordé le problème sous deux angles différents :</p>
             <ul style= "list-style-type: square">
-              <li>dans un premier temps la résolution d’un unique terrain en faisant évoluer notre groupe d’individus, et pouvoir ainsi étudier l’effet des différents paramètres de nos méthodes d’évolution</li>
-              <li>dans un second temps la création d’individus capable de résoudre des terrain inconnus en s'entraînant au préalable sur des terrains « basiques»</li>
+              <li>dans un premier temps, la résolution d’un unique terrain en faisant évoluer notre groupe d’individus, et ce qui nous permet ainsi d'étudier l’effet des différents paramètres de nos méthodes d’évolution</li>
+              <li>dans un second temps la création d’individus capables de résoudre des terrain inconnus en s'entraînant au préalable sur des terrains « basiques»</li>
             </ul><hr/>
             <h3>Objectifs</h3>
              <p><ul style= "list-style-type: square">
-              <li>faire évoluer notre population sur un terrain donné jusqu’à ce qu’un de ses individu puisse le
+              <li>faire évoluer notre population sur un terrain donné jusqu’à ce que l’un de ses individus réussisse à le
 résoudre
 </li>
               <li>optimiser nos paramètres d’évolution pour parvenir à un individu solution dans un temps
 minimum
 </li>
-              <li>étudier l’impact des différent terrain sur la difficulté de résolution</li>
+              <li>étudier l’impact de différents terrains sur la difficulté de résolution</li>
             </ul></p>
-              <p>Les terrain sont les environnement dans lesquels nous testons nos individus. Une résolution correspond à
-un parcoure de l’extrémité gauche à celle de droite d’un Terrain.
-L’efficacité de notre résolution dépend énormément du terrain sur lequel on effectue, certain sont simples,
-d’autre complexe et certain enfin sont contre intuitifs. Voilà plusieurs exemple de terrain sur lesquels
-nous effectuons nos expérimentations
+              <p>Les terrains sont les environnements dans lesquels nous testons nos individus. Une résolution correspond à
+un parcours de l’extrémité gauche à l'extrémité droite d’un terrain.
+L’efficacité de notre résolution dépend énormément du terrain étudié: certains sont simples,
+d’autre complexes et d'autres encore sont contre intuitifs. Voilà plusieurs exemples de parcours sur lesquels
+nous effectuons nos expérimentations :
 <div class="image"><img src="images/terrains.jpg" alt="Images de différents terrains"/></div>
 </p><hr/>
 
 
             <h3>Protocole</h3>
-            <p>Pour chacun de ces terrain, nous avons testé les méthodes de résolutions (évolution jusqu’à produire un
-individus efficace pour différents paramètres:(nombre d’individus par génération, taux de mutation par
-individu et méthode de sélection ). La variable nous permettant de juger de l’efficacité d’une méthodes
-d’évolution est le temps qu’elle met pour produire un individu capable de résoudre notre terrain.
+            <p>Pour chacun de ces terrains, nous avons testé les méthodes de résolution (évolution jusqu’à produire un
+individu efficace pour différents paramètres : (nombre d’individus par génération, taux de mutations par
+individu et méthode de sélection). La variable nous permettant de juger de l’efficacité d’une méthode
+d’évolution est le temps qu’elle met pour produire un individu capable de résoudre notre parcours.
 </p><hr/>
 <h3> Résultats</h3>
-<p>Nous avons réussi à obtenir un individu performant sur l’ensemble des terrain à l’exception du dernier
-(terrain à cul de sacs). Celui ci présentait la particularité de demander une mémoire efficace (permettant
-théoriquement à nos agent de rebrousser chemin en cas de cul de sac, ce que devrait pouvoir permettre
-notre modèle,
-Les terrain les plus simples sont résolus en moins d’une seconde par notre algorithme évolutif. Les terrain
-les plus complexe requièrent plusieurs dizaine de seconde, parfois centaine.
-L’analyse statistique de nos résultat est rendu particulièrement compliqué par la nature de nos résidus. Le
-temps de calcule à paramètres identique ne suit pas de loi normal. Cependant on peut tout de même
-observer l’effet de certain paramètres sur les terrain les plus simples.
+<p>Nous avons réussi à obtenir un individu performant sur l’ensemble des terrains, à l’exception du dernier
+(terrain à culs de sac). Celui-ci présentait la particularité d'exiger une mémoire efficace (permettant
+théoriquement à nos agents de rebrousser chemin en cas de culs de sac, ce que devrait pouvoir permettre
+notre modèle).
+Les terrains les plus simples sont résolus en moins d’une seconde par notre algorithme évolutif. Les plus complexes requièrent plusieurs dizaines de secondes, allant parfois jusqu'à plusieurs centaines.
+L’analyse statistique de nos résultats est rendue particulièrement compliquée par la nature de nos résidus. Le
+temps de calcul à paramètres identiques ne suit pas de loi normale. Cependant, on peut tout de même
+observer l’effet de certains paramètres sur les terrains les plus simples.
 </p><hr/>
 
 <header><h2>Étude des paramètres</h2><header>
 
-<h3>Impact de la méthode d'évolution </h3> <p> l’utilisation de l’une où l’autre des méthodes d’évolution n’entraîne pas de différence significative dans le temps de résolution</p><hr/>
-<h3>Impact du tau de mutation</h3> <p> Au delà d’un certain seuil, le tau de mutation augmente le temps de calcule</p><hr/>
-<h3>Impact du nombre d’enfant par génération </h3> <p> De façon similaire le nombre d’individu par génération
+<h3>Impact de la méthode d'évolution </h3> <p> L’utilisation de l’une où l’autre des méthodes d’évolution n’entraîne pas de différence significative dans le temps de résolution.</p><hr/>
+<h3>Impact du taux de mutations</h3> <p> Au-delà d’un certain seuil, le taux de mutations augmente le temps de calcul.</p><hr/>
+<h3>Impact du nombre d’enfants par génération </h3> <p> De façon similaire, le nombre d’individus par génération
 devient pénalisant au-delà d’un certain seuil. L’amplitude de la pénalisation est cependant beaucoup plus
-importante que pour le tau de mutation.
+importante que pour le taux de mutations.
 </p><hr/>
 <h3>Paramètres optimaux</h3><p>10 individus et un taux de mutation de 5</p><hr/>
-<h3>Conclusion</h3><p> la plupart terrain sont solvable, cependant les individus ainsi produit sont des spécialistes, incapable de
-résoudre des terrain un peu différents du leur. Nous sommes donc encore loin de l’objectif que nous final
+<h3>Conclusion</h3><p> La plupart des terrains est solvable, mais les individus ainsi produits sont spécialisés, incapables de
+résoudre des parcours légèrement différents de celui qu'ils savent résoudre. Nous sommes donc encore loin de l’objectif final
 que nous cherchons à atteindre.</p><hr/>
 
 <header><h2>Entraînement des individus</h2><header>
 
 <h3>Objectifs</h3>
              <ul style= "list-style-type: square">
-              <il>Obtenir des individus capable de résoudre un ensemble de terrain simples.
+              <il>Obtenir des individus capables de résoudre un ensemble de terrains simples.
 </il>
-              <il>Étudier la performance de ces individus sur des terrains inconnus
+              <il>Étudier la performance de ces individus sur des terrains inconnus.
 </il>
-              <il>Obtenir un individu « solveur universel »</il>
+              <il>Obtenir un individu « solveur universel ».</il>
             </ul><hr/>
 <h3>Terrains d'entraînement</h3>
-<p>voici la liste des terrains de testes pour nos individus. Chaque terrain correspond
-à une capacité simple que nous souhaitons voire nos individus adopter.
+<p>Voici la liste des terrains de tests pour nos individus. Chaque parcours correspond
+à une capacité simple que nous souhaitons que nos individus adoptent.
 </p><hr/>
 <h3>Protocole</h3>
-<p>On constitue une liste de terrain sur lesquels on veut entraîner nos individus. Pour chacun de nos terrain,
-On fait évoluer nos individus jusqu’à ce qu’il soient capable de le résoudre, puis on passe au terrain
-suivant. On s’arrête lorsqu’ au bout d’un cycle de terrain complet, le même individu à résolu chacun des
-terrains. Cela est équivalent à dire que chaque terrain à été résolu du premier coup.
+<p>On constitue une liste de plateaux sur lesquels on veut entraîner nos individus. Pour chacun de nos terrains,
+On fait évoluer nos agents jusqu’à ce qu’ils soient capables de le résoudre, puis on passe au terrain
+suivant. On s’arrête lorsqu’au bout d’un cycle complet de terrains, le même individu a su venir à bout de chacun des parcours. Cela est équivalent à dire que chaque terrain a été résolu du premier coup.
 </p><hr/>
 <h3>Résultats</h3>
-<p>Nous n’avons obtenu que des résultats mitigé pour ce problème. Pour le moment aucun individu solution
-« universel » n’a été trouvé. Des individu capable de résoudre une série de monde basique puis une série
-de monde simple ont été trouvé. Cependant, certain environnements basiques (notamment ceux
-impliquant de reculer semblent particulièrement peut compatible avec les autres terrain.
-On observe aussi un certain nombre de phénomène de boucle sans fin, ou aucun individu n’est capable de
-résoudre l’ensemble des parcours, à cause de deux terrain « antagonistes » où un individu résolvant l’un
-des terrain devient incapable de résoudre l’autre, et il suffit de quelque mutation pour inverser cet état.
-On tombe alors dans une situation pseudo stable avec alternance entre deux individus extrêmement
-proche qui à eu deux sont capable de résoudre l’ensemble des environements.
+<p>Nous n’avons obtenu que des résultats mitigés pour ce problème. Pour le moment, aucun individu solution
+« universel » n’a été trouvé. Des individus capables de résoudre une série de mondes basiques, puis une série
+de mondes simples ont été trouvés. Cependant, certains environnements basiques (notamment ceux
+impliquant de reculer) semblent particulièrement peut compatibles avec les autres terrains.
+On observe aussi un certain nombre de phénomènes de boucle sans fin, ou aucun individu n’est capable de
+résoudre l’ensemble des parcours, à cause de deux terrains « antagonistes ». Dans ce cas-là, un individu résolvant l’un
+des terrains devient incapable de résoudre l’autre, et il suffit de quelques mutations pour inverser cet état.
+On tombe alors dans une situation pseudo stable avec une alternance entre deux individus extrêmement
+proches, qui à eux deux savent résoudre l’ensemble des environnements.
 </p><hr/>
 <h3>Conclusion</h3>
-<p>Obtenir un individu capable de parcourir n’importe quel terrain à partir de modèle bio-inspiré était peut
-être trop complexe. Si ces expérimentations nous ont bien appris quelque-chose, c’est que
-l’environnement est de loin le paramètre le plus important dans notre modélisation, qu’il est déterminant
-dans la construction de nos individus et qu’il est aussi limitant vis à vis des autres environnements. Sans
-évolution dirigée, chance où puissance de calcule très importante, obtenir un individu qui soit capable de
-
-s’adapter à tout les environnement semble improbable.
+<p>Obtenir un individu capable de parcourir n’importe quel terrain à partir d'un modèle bio-inspiré était peut-être trop complexe. Si ces expérimentations nous ont bien appris quelque chose, c’est que
+l’environnement est de loin le paramètre le plus important dans notre modélisation. Il est en effet déterminant
+dans la construction de nos individus, et est aussi limitant vis à vis des autres environnements. Sans
+l'évolution dirigée, obtenir un individu capable de s’adapter à tout les environnement semble improbable. Il serait alors indispensable d'avoir une puissance de calcul assez conséquente.
 On peut faire un parallèle avec l’évolution naturelle, où dans l’écrasante majorité des cas, une espèce
-n’est associé qu’à un biotope particulier.</p>
+n’est associée qu’à un biotope particulier.</p>
           </div>
         </div>
       </section>

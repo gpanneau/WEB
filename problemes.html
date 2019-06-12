@@ -28,7 +28,7 @@
         <ul class="links">
           <li><a href="index.html">Page d'accueil</a></li>
           <li><a href="structure_programme.html">Structure du programme</a></li>
-          <li><a href="observations.html">Observations et analyse</a></li>
+          <li><a href="observations.html">Observations et analyses</a></li>
           <li><a href="parallele_biologique.html">Parallèle biologique</a></li>
           <li><a href="problemes.html">Problèmes rencontrés</a></li>
           <li><a href="plus_loin.html">Pour aller plus loin</a></li>
@@ -46,16 +46,17 @@
         <div class="inner">
           <div class="content">
             <header>
-              <h2>Notions fondammentales</h2>
-            </header>
-            <h3>Fitness</h3>
-            <p> La fitness d'un individu représente sa capacité à se reproduire.
-Ainsi fitness = survie x fécondité.
-Dans notre cas, la fitness est définie comme étant la distance parcourue par l'agent modulée par la mort de l'agent s'il tombe dans un trou.
-            </p>
+            <h2>Les aléas de la programmation</h2>            
             <hr/>
-            <h3>Mutation et variabilité génétique</h3>
-            <p> Les mutations du génome apparaissent aléatoirement dans le génome d'un être vivant. Les mutations affectant les cellules germinales peuvent être transmises à la descendance. C'est une source importante de variabilité génotypique et phénotypique. </p>
+            <h3>Détermination de la forme du génome</h3>
+            <p>En premier lieu, nous avons pensé à faire une matrice pour génome de nos individus. Nous sommes partis longtemps sur cette lancée avant de nous rendre compte qu'une matrice est plus limitée en terme de modularité, et est plus difficile à améliorer. Notre choix s'est alors porté sur un système de graphes. Dans ce foncionnement, l'input correspond à des informations de l'environnement autour de l'individu, et en fonctionnant des connections mises en place, différentes réactions sont envisagées.</p>
+            </header>
+            <h3>Interface graphique</h3>
+            <p>Tout à d'abord, il a fallu décider de l'organisation du programme de la fenêtre graphique. Finalement, la décision a été prise de la faire fonctionner entre une classe dédier, ViewWorld, et la classe Game. Il a été compliqué de répartir les attributs de manière à faire interagir les deux classes.</p>
+            Ensuite, il y a souvent eu des problèmes de placement des différents éléments dans la fenêtre créée. Ces problèmes ont été résolus en combinant des réponses de différents sites web pour en trouver une adaptée. 
+            Enfin, le plus long fut de faire fonctionner le bouton faisant avancer les individus. Il a pour cela été nécessaire de réorganiser en grande partie le fonctionnement de la fenêtre pour pouvoir utliser des méthodes des deux classes. Nous avons également essayé de créer un bouton faisant plusieurs itérations, mais l'individu n'était affiché qu'après la dernière itération. Malgré plusieurs essais pour trouver d'où provenait l'erreur, nous supposons que le problème était lié au timer utilisé, et nous n'avons toujours pas trouvé comment le résoudre.
+            </p>
+
             <hr/>
             <h3>Sélection naturelle et évolution</h3>
             <p>Les différents phénotypes sont soumis à des pressions de sélection. En effet les individus les moins adaptés à un environnement périssent et ne peuvent transmettre leurs gènes (fitness diminuée). Au contraire les individus à grande fitness transmettent leur génotype aux générations futures. </p>
